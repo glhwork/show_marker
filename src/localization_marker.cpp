@@ -13,14 +13,14 @@ class MapMarker {
 
  private:
   ros::NodeHandle n;
-  ros::Subscriber marker_sub;
+  // ros::Subscriber marker_sub;
   ros::Publisher marker_pub;
 //   double count;
 
 };
 
 MapMarker::MapMarker(ros::NodeHandle n) {  
-  marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1000);
+  marker_pub = n.advertise<visualization_msgs::Marker>("localization_marker", 1000);
 //   count = 0.0;
 }
 
@@ -49,18 +49,11 @@ void MapMarker::MarkerCallback(const geometry_msgs::Point &position) {
   tmp_p.z = 0.2;
 
   p.points.push_back(tmp_p);
-//   p.pose.position.x = position.x;
-//   p.pose.position.y = position.y;
-
   marker_pub.publish(p);
-//   std::cout << "[ x = " << p.pose.position.x << "   " 
-//             << "y = " << p.pose.position.y << " ]" << std::endl;
-
-
 }
 
 int main(int argc, char** argv) {
-  ros::init(argc, argv, "show_localization");
+  ros::init(argc, argv, "localization_marker");
   ros::NodeHandle n;
 
   MapMarker show(n);

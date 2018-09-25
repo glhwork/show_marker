@@ -30,3 +30,9 @@ target_link_libraries(localization_marker
   ${catkin_LIBRARIES}
 )
 
+add_executable(path_marker
+  src/path_marker.cpp
+)
+target_link_libraries(path_marker
+  ${catkin_LIBRARIES}
+)
