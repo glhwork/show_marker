@@ -1,0 +1,6 @@
+<launch>
+
+  <node pkg="show_marker" name="localization_marker" type="localization_marker"></node>
+  <node pkg="show_marker" name="path_marker" type="path_marker"></node>
+
+</launch>

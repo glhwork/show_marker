@@ -36,3 +36,10 @@ add_executable(path_marker
 target_link_libraries(path_marker
   ${catkin_LIBRARIES}
 )
+
+add_executable(send_path
+  src/send_path.cpp
+)
+target_link_libraries(send_path
+  ${catkin_LIBRARIES}
+)
